@@ -25,6 +25,15 @@ namespace Study_Mosh_CSharp_intermediate
             };
 
             Console.WriteLine(person.Id + ": " + person.FirstName + " " + person.LastName);
+
+            IndexerClass indexer = new IndexerClass();
+            indexer[0] = 123;
+            indexer[1] = -1;
+            indexer[2] = 5050;
+            indexer[3] = 91;
+
+            Console.WriteLine(indexer[2]);
+            Console.WriteLine(indexer[0]);
         }
 
         class Calculator
@@ -51,6 +60,17 @@ namespace Study_Mosh_CSharp_intermediate
 
             public float Salary { get; set; }
 
+        }
+
+        class IndexerClass
+        {
+            private List<int> valuesList = new List<int>();
+
+            public int this[int index]
+            {
+                get { return valuesList[index]; }
+                set { valuesList.Add(value); }
+            }
         }
     }
 }
